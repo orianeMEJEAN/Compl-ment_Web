@@ -1,4 +1,6 @@
 const tabNum = [];
+const delay = 2000;
+let i;
 
 function getNumbreTab(min, max)
 {
@@ -15,3 +17,21 @@ function getNumbreTab(min, max)
 }
 
 console.log(getNumbreTab(tabNum));
+
+const zone = document.getElementById("zoneVal");
+function showTab()
+{
+    getNumbreTab(tabNum);
+    
+    if (i < tabNum.length)
+    {
+        zone.textContent = tabNum[i];
+        i++;
+        setInterval(showTab, delay);
+    }
+    else
+    {
+        clearInterval(this.delay);
+    }
+}
+const intervalID = setInterval(showTab, delay);
