@@ -1,37 +1,67 @@
-const tabNum = [];
+const A_tabNum = [];
 const delay = 2000;
-let i = 0;
+let I_i = 0;
 
 function getNumbreTab(min, max)
 {
     min = Math.ceil(-10);
     max = Math.floor(40);
 
-    for (let i = 0; i < 20; i++)
+    for (let I_i = 0; I_i < 20; I_i++)
     {
         number = Math.floor(Math.random() * (max - min + 1)) + min;
-        tabNum.push(number);
+        A_tabNum.push(number);
     }
 
-    return tabNum;
+    return A_tabNum;
 }
 
-//console.log(getNumbreTab(tabNum));
+console.log(getNumbreTab(A_tabNum));
 
 const zone = document.getElementById("zoneVal");
-function showTab()
+// function showTab()
+// {
+//     if (I_i < tabNum.length)
+//     {
+//         const I_val = A_tabNum[I_i];
+//         zone.textContent = I_val;
+//         changeStyle(I_val);
+//         I_i++;
+//         setInterval(showTab, delay);
+//     }
+//     else
+//     {
+//         clearInterval(intervalID);
+//     }
+// }
+
+setInterval(function ()
 {
-    if (i < tabNum.length)
+    zone.textContent = A_tabNum[I_i];
+    I_i++;
+}, delay);
+
+function changeStyle(value)
+{
+    /* Sans un remove de classList le style gardé sera celui du chiffre le + grand*/
+    zone.classList.remove(
+        "styleBlue", "styleGreen", "styleOrange","styleRed"
+    )
+
+    if (value >= -10 && value < 0)
     {
-        zone.textContent = tabNum[i];
-        i++;
-        setInterval(showTab, delay);
+        zone.classList.add("styleBlue");
     }
-    else
+    else if (value >= 0 && value < 20)
     {
-        clearInterval(intervalID);
+        zone.classList.add("styleGreen");
+    }
+    else if (value >= 20 && value < 30)
+    {
+        zone.classList.add("styleOrange");
+    }
+    else if (value >= 30 && value <= 40)
+    {
+        zone.classList.add("styleRed");
     }
 }
-
-getNumbreTab(tabNum);
-const intervalID = setInterval(showTab, delay);

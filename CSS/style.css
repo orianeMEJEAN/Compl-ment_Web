@@ -1,11 +1,11 @@
 .styleBlue
 {
-    border: 2px solid blue;
+    border: 2px solid #4672ff;
 }
 
 .styleGreen
 {
-    border: 2px solid green;
+    border: 2px solid #76ff76;
 }
 
 .styleOrange
@@ -15,5 +15,5 @@
 
 .styleRed
 {
-    border: 2px solid red;
+    border: 2px solid #ff6a6a;
 }
