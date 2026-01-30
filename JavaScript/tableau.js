@@ -19,6 +19,7 @@ function getNumbreTab(min, max)
 console.log(getNumbreTab(A_tabNum));
 
 const zone = document.getElementById("zoneVal");
+
 // function showTab()
 // {
 //     if (I_i < tabNum.length)
@@ -37,7 +38,9 @@ const zone = document.getElementById("zoneVal");
 
 setInterval(function ()
 {
+    const I_val = A_tabNum[I_i];
     zone.textContent = A_tabNum[I_i];
+    changeStyle(I_val);
     I_i++;
 }, delay);
 
