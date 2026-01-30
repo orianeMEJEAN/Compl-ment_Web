@@ -1,19 +1,19 @@
 .styleBlue
 {
-    border: 2px blue;
+    border: 2px solid blue;
 }
 
 .styleGreen
 {
-    border: 2px green;
+    border: 2px solid green;
 }
 
 .styleOrange
 {
-    border: 2px orange;
+    border: 2px solid orange;
 }
 
 .styleRed
 {
-    border: 2px red;
+    border: 2px solid red;
 }
