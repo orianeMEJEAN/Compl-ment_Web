@@ -20,6 +20,7 @@ console.log(getNumbreTab(A_tabNum));
 
 const zone = document.getElementById("zoneVal");
 const comment = document.getElementById("comment");
+const tempPrec = document.getElementById("zoneValPrec");
 
 // Ancien code (gardé au cas ou)
 // function showTab()
@@ -40,6 +41,11 @@ const comment = document.getElementById("comment");
 
 setInterval(function ()
 {
+    if (I_i > 0)
+    {
+        showHistory(A_tabNum[I_i - 1]);
+    }
+
     const I_val = A_tabNum[I_i];
     zone.textContent = I_val;
     addStyleAndComment(I_val);
@@ -72,4 +78,11 @@ function addStyleAndComment(value)
         comment.textContent = "Caliente ! Vamos a la playa, ho hoho hoho !!";
         zone.classList.add("styleRed");
     }
+}
+
+function showHistory(previousValue)
+{
+    const history = document.createElement("div");
+    history.textContent = "Jour " + (I_i - 1) + " : "  + previousValue + "°C";
+    tempPrec.appendChild(history);
 }
