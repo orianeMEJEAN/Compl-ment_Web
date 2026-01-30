@@ -19,7 +19,9 @@ function getNumbreTab(min, max)
 console.log(getNumbreTab(A_tabNum));
 
 const zone = document.getElementById("zoneVal");
+const comment = document.getElementById("comment");
 
+// Ancien code (gardé au cas ou)
 // function showTab()
 // {
 //     if (I_i < tabNum.length)
@@ -39,20 +41,22 @@ const zone = document.getElementById("zoneVal");
 setInterval(function ()
 {
     const I_val = A_tabNum[I_i];
-    zone.textContent = A_tabNum[I_i];
-    changeStyle(I_val);
+    zone.textContent = I_val;
+    addStyleAndComment(I_val);
     I_i++;
 }, delay);
 
-function changeStyle(value)
+function addStyleAndComment(value)
 {
     /* Sans un remove de classList le style gardé sera celui du chiffre le + grand*/
     zone.classList.remove(
         "styleBlue", "styleGreen", "styleOrange","styleRed"
     )
+    comment.textContent = "";
 
     if (value >= -10 && value < 0)
     {
+        comment.textContent = "Brrrrrrr, un peu froid ce matin, mets ta cagoule !";
         zone.classList.add("styleBlue");
     }
     else if (value >= 0 && value < 20)
@@ -65,6 +69,7 @@ function changeStyle(value)
     }
     else if (value >= 30 && value <= 40)
     {
+        comment.textContent = "Caliente ! Vamos a la playa, ho hoho hoho !!";
         zone.classList.add("styleRed");
     }
 }
