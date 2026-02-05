@@ -41,7 +41,7 @@ const tempPrec = document.getElementById("zoneValPrec");
 
 setInterval(function ()
 {
-    if (I_i > 0)
+    if (I_i > 0 && I_i <= 20)
     {
         showHistory(A_tabNum[I_i - 1]);
     }
