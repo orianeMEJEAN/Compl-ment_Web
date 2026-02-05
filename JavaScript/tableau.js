@@ -21,6 +21,10 @@ console.log(getNumbreTab(A_tabNum));
 const zone = document.getElementById("zoneVal");
 const comment = document.getElementById("comment");
 const tempPrec = document.getElementById("zoneValPrec");
+const btnJour = document.getElementById("btnJour");
+const btnHist = document.getElementById("btnHist");
+const pageJour = document.getElementById("pageJour");
+const pageHist = document.getElementById("pageHist");
 
 // Ancien code (gardé au cas ou)
 // function showTab()
@@ -86,3 +90,17 @@ function showHistory(previousValue)
     history.textContent = "Jour " + (I_i - 1) + " : "  + previousValue + "°C";
     tempPrec.appendChild(history);
 }
+
+btnJour.addEventListener("click", () => {
+    btnJour.classList.add("active");
+    btnHist.classList.remove("active");
+    pageJour.hidden = false;
+    pageHist.hidden = true;
+});
+
+btnHist.addEventListener("click", () => {
+    btnJour.classList.remove("active");
+    btnHist.classList.add("active");
+    pageHist.hidden = false;
+    pageJour.hidden = true;
+});
