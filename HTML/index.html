@@ -10,10 +10,10 @@
             <h2>Température du jour : </h2>
                 <div id="comment"></div>
                 <p>
-                    Température du jour : <span id="zoneVal"></span>°C
+                    Température du jour : <span id="zoneVal" aria-live="polite"  aria-atomic="true"></span>°C
                 </p>
             <h3>Température des jours precedent : </h3>
-                <ul id="zoneValPrec"></ul>
+                <ul id="zoneValPrec" role="alert" aria-live="assertive"></ul>
         </section>
         <script src="../JavaScript/tableau.js"></script>
     </body>
